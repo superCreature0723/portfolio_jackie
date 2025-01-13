@@ -1,0 +1,52 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "analyze": "ANALYZE=true next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "export": "next build && next export",
+    "lint": "next lint",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx}\"",
+    "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
+    "component": "ikota component"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@ikota/mantine": "^0.9.9",
+    "@mantine/carousel": "^6.0.4",
+    "@mantine/core": "^6.0.4",
+    "@mantine/eslint-config": "^3.6.14",
+    "@mantine/hooks": "^6.0.4",
+    "@mantine/next": "^6.0.4",
+    "@next/bundle-analyzer": "13.2.4",
+    "@react-three/drei": "^9.53.3",
+    "@react-three/fiber": "^8.10.0",
+    "@tabler/icons": "^1.107.0",
+    "cookies-next": "^2.1.1",
+    "devicons-react": "^1.2.5",
+    "embla-carousel-react": "^8.0.0-rc03",
+    "i18next": "^22.4.9",
+    "ikota": "^1.0.1",
+    "mantine-flagpack": "^1.0.1",
+    "next": "^13.2.4",
+    "next-i18next": "^13.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.2.0",
+    "sharp": "^0.32.0",
+    "three": "^0.148.0",
+    "zustand": "^4.3.8"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^13.2.4",
+    "@types/node": "^18.11.4",
+    "@types/react": "18.0.21",
+    "@types/three": "^0.148.0",
+    "eslint-config-next": "13.4.2",
+    "prettier": "^2.8.7",
+    "typescript": "5.0.3"
+  },
+  "packageManager": "pnpm@8.5.0"
+}
