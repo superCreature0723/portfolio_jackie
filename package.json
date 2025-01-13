@@ -22,7 +22,7 @@
     "@mantine/next": "^6.0.4",
     "@next/bundle-analyzer": "13.2.4",
     "@react-three/drei": "^9.53.3",
-    "@react-three/fiber": "^8.10.0",
+    "@react-three/fiber": "^8.17.12",
     "@tabler/icons": "^1.107.0",
     "cookies-next": "^2.1.1",
     "devicons-react": "^1.2.5",
