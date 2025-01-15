@@ -1,87 +1,70 @@
+import '@/scss/globals.css';
+import '@/scss/index.scss';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { Inter } from 'next/font/google';
-import { MantineProvider, AppShell } from '@mantine/core';
-import { Header } from '@component/layout/header';
-import { Footer } from '@component/layout/footer';
-import { Navbar } from '@component/layout/navbar';
-import { appWithTranslation, useTranslation } from 'next-i18next';
-import { Mesh } from '@component/layout/mesh';
+import dynamic from 'next/dynamic';
+import { Fira_Code, Raleway } from 'next/font/google';
+import { useEffect, useState } from 'react';
 
-// Inter font from Google Fonts, with latin subset
-const inter = Inter({
-  subsets: ['latin', 'latin-ext', 'cyrillic', 'cyrillic-ext'],
-  display: 'swap',
+const raleway = Raleway({ subsets: ['latin'] });
+const firaCode = Fira_Code({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] });
+
+const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
+  ssr: false,
 });
 
-// An app wrapper with MantineProvider
-const App = ({ Component, ...pageProps }: AppProps) => {
-  const { t } = useTranslation('works');
+export default function App({ Component, pageProps }: AppProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <>
-      <Head>
-        <title>{t('works.Portfolio.title') || ''}</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <meta property="og:title" content={t('works.Portfolio.title') || ''} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://domin.pro/" />
-        <meta property="og:image" content="https://domin.pro/works/portfolio.png" />
-        <meta property="og:description" content={t('works.Portfolio.description') || ''} />
-        {/* Making the card bigger */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="theme-color" content="#e3e3e3" />
-        {/* Favicons */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      </Head>
-
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
-          defaultRadius: 'xs',
-          fontFamily: inter.style.fontFamily,
-          primaryColor: 'dark',
-          black: '#141517',
-          colors: {
-            // Override default gray colors
-            gray: [
-              '#E3E3E3',
-              '#CFCFCF',
-              '#C5C5C5',
-              '#BBBBBB',
-              '#B2B2B2',
-              '#A8A8A8',
-              '#9E9E9E',
-              '#949494',
-              '#8A8A8A',
-            ],
-          },
-          globalStyles: (theme) => ({
-            // Override default global styles without usage of css imports
-            '::selection': {
-              backgroundColor: theme.colors.dark[8],
-              color: theme.white,
-            },
-          }),
-        }}
-      >
-        <Mesh>
-          <AppShell header={<Header />} footer={<Footer />} padding={0}>
-            <Navbar />
-            <Component {...pageProps} />
-          </AppShell>
-        </Mesh>
-      </MantineProvider>
+      <style jsx global>{`
+        :root {
+          --raleway: ${raleway.style.fontFamily};
+          --fira-code: ${firaCode.style.fontFamily};
+        }
+      `}</style>
+      <Component {...pageProps} />
+      {!isMobile && (
+        <AnimatedCursor
+          innerSize={8}
+          outerSize={35}
+          color="255, 255, 255"
+          outerAlpha={0.3}
+          innerScale={1}
+          outerScale={1.7}
+          showSystemCursor={false}
+          outerStyle={{
+            mixBlendMode: 'exclusion',
+          }}
+          clickables={[
+            'a',
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            'label[for]',
+            'select',
+            'textarea',
+            'button',
+            '.link',
+          ]}
+        />
+      )}
     </>
   );
-};
-
-export default appWithTranslation(App);
+}

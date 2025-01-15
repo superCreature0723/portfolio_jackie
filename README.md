@@ -1,121 +1,138 @@
-> **Warning**
-> This portfolio is deprecated and will be rewritten soon.
+<div align="center">
 
-# Portfolio
+![Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Portfolio%20Website&fontSize=80&animation=fadeIn&fontAlignY=35)
 
-![Portfolio Screenshot](/public/works/portfolio.png)
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#demo">Demo</a> •
+  <a href="#screenshots">Screenshots</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#tech-stack">Tech Stack</a>
+</p>
 
-## About portfolio
+[![GitHub license](https://img.shields.io/github/license/superCreature0723/Portfolio?style=flat-square)](LICENSE)
+[![Website](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Flohit.is-a.dev)](https://lohit.is-a.dev)
+[![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?style=flat-square&logo=react)](https://reactjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 
-This work is my new portfolio site built with [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Three.js](https://threejs.org/) & [Mantine](https://mantine.dev/). A website presents a single page application with carousel consisting of sections presented in the header.
+<p align="center">A modern, responsive portfolio website showcasing professional experience, projects, and skills. Built with React, Next.js, and TypeScript, featuring smooth animations and dynamic content. ✨</p>
 
-## Installation
+</div>
 
-To run this project locally, you need to have [Node.js](https://nodejs.org/en/) installed on your machine:
+## ✨ Features
 
-```bash
-git clone https://github.com/Domin-MND/portfolio . # clone the repository into the current directory
-npm i -g pnpm # package manager
-pnpm install # for the dependencies installation
-pnpm build # for the production build
-pnpm start # start the server
+<div align="center">
+
+```mermaid
+mindmap
+  root((Portfolio Website))
+    User Interface
+      Responsive Design
+      Smooth Animations
+      Dynamic Content
+    Sections
+      About Me
+      Experience
+      Projects
+      Contact
+    Technical Features
+      Next.js Integration
+      TypeScript Support
+      SEO Optimization
+    Integrations
+      Social Media
+      Email Contact
+      Project Showcase
 ```
 
-else you can deploy it on [Vercel](https://vercel.com/) by using its CLI tool:
+</div>
 
+## 🚀 Demo
+
+Experience the live portfolio at [https://lohit.is-a.dev](https://lohit.is-a.dev)
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="image.png" alt="Hero Page" width="600px"/>
+</div>
+
+## 🛠️ Installation
+
+1️⃣ Clone the repository:
 ```bash
-npm i -g vercel # install the Vercel CLI tool
-vercel # deploy the project
+git clone https://github.com/superCreature0723/Portfolio
 ```
 
-## Configuration
+2️⃣ Navigate to project directory:
+```bash
+cd Portfolio
+```
 
-You can configure the project by editing the `config.tsx` files in the following components:
+3️⃣ Install dependencies:
+```bash
+npm install
+```
 
-- `src/components/pages/index/about/config.tsx` (for the About card)
-- `src/components/pages/index/contact/config.tsx` (for the Contact card)
-- `src/components/pages/index/skills/config.tsx` (for the Skills card)
-- `src/components/pages/index/works/config.tsx` (for the Works card)
-- `src/components/layout/footer/config.tsx` (for the footer component)
-- `src/components/layout/header/config.tsx` (for the header component)
-- `src/components/layout/help/config.tsx` (for i18n help link)
-- `src/components/layout/translations/config.tsx` (for translation list, also configure `next-i18next.config.js` locales)
+4️⃣ Run development server:
+```bash
+npm run dev
+```
 
-## i18n
+5️⃣ Open in browser:
+- Visit [http://localhost:3000](http://localhost:3000)
 
-This project supports i18n. If no translation is provided to the language - it will take the config information from the above tsx files. The english default translation folder must be named `en` and should never be deleted but may be modified.
+## 💻 Tech Stack
 
-## Documentation
-
-All the available documentation regarding the creation & maintainability of the project is in `docs` folder & in configuration/component code comments.
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## Contributors
-
-Huge thanks to these wonderful people for their contributions:
-
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <a href="https://github.com/RaydanOMGr">
-          <img alt="RaydanOMGr" src="https://avatars.githubusercontent.com/u/73817645" width="64" />
-        </a>
-      </td>
-      <td>
-        <a href="https://github.com/RaydanOMGr">
-          <strong>RaydanOMGr</strong><br />
-        </a>
-        Translated portfolio to german
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://discordapp.com/users/929046591657086986">
-          <img alt="Len#2832" src="https://cdn.discordapp.com/attachments/947837208474288158/1073596324311728148/IMG_20230210_212820.jpg" width="64" />
-        </a>
-      </td>
-      <td>
-        <a href="https://discordapp.com/users/929046591657086986">
-          <strong>Len#2832</strong><br />
-        </a>
-        Translated portfolio to indonesian
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://discordapp.com/users/667677528218927105">
-          <img alt="yung_heheh#0430" src="https://cdn.discordapp.com/avatars/667677528218927105/539e93675ad7226fe2099b7ae593ea9b.png" width="64" />
-        </a>
-      </td>
-      <td>
-        <a href="https://discordapp.com/users/667677528218927105">
-          <strong>yung_heheh#0430</strong><br />
-        </a>
-        Translated portfolio to polish & helped with testing the web
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <a href="https://discord.gg/AaS4dwVHyA">
-          <img alt="djoh" src="https://avatars.githubusercontent.com/u/68508885" width="64" />
-        </a>
-      </td>
-      <td>
-        <a href="https://discord.gg/AaS4dwVHyA">
-          <strong>djoh</strong><br />
-        </a>
-        Translated portfolio to ukrainian
-      </td>
-    </tr>
-  </tbody>
+<table align="center">
+  <tr>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=react" width="48" height="48" alt="React" />
+      <br>React
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=nextjs" width="48" height="48" alt="Next.js" />
+      <br>Next.js
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=ts" width="48" height="48" alt="TypeScript" />
+      <br>TypeScript
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=scss" width="48" height="48" alt="SCSS" />
+      <br>SCSS
+    </td>
+  </tr>
 </table>
 
-> **Note**: If you wish to help translate the portfolio to your language, please join the [Crowdin project](https://crowdin.com/project/domins-portfolio).
+## ⚡ Core Features
 
-## License
+- 📱 Responsive Design
+  - Mobile-first approach
+  - Seamless experience across all devices
+  - Adaptive layouts and components
 
-This project is under [MIT](https://choosealicense.com/licenses/mit/) license. You can freely use it for your own purposes.
+- 🎯 Dynamic Content
+  - Real-time project showcase
+  - Interactive experience section
+  - Animated skill representations
+
+- 🎨 Modern UI/UX
+  - Smooth Framer Motion animations
+  - Intuitive navigation
+  - Clean and professional design
+
+- 🔍 SEO Optimized
+  - Meta tags optimization
+  - Semantic HTML structure
+  - Performance optimized
+
+## 📄 License
+
+<div align="center">
+
+MIT License © [Jackie Clarke](LICENSE)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" width="100%"/>
+
+</div>
